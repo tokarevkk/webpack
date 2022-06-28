@@ -6,7 +6,10 @@
   "scripts": {
     "webpack": "webpack",
     "start": "webpack-dev-server",
-    "build": "webpack --config webpack.config.js"
+    "build": "npm run remove:dist && npm run run:build && npm run copy:static",
+    "remove:dist": "rm -rf ./dist",
+    "run:build": "webpack --config webpack.config.js",
+    "copy:static": "cp -r ./img ./dist/img"
   },
   "repository": {
     "type": "git",
