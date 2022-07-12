@@ -9,7 +9,7 @@ export const createNode = (tagName, content, attrs, children) => {
     }
 
     Object.entries(rest).forEach(([key, value]) => {
-      elem[key] = value
+      elem.setAttribute(key, value)
     })
   }
 

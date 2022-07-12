@@ -7,10 +7,14 @@ const renderMessages = () => {
     null,
     null,
     messages.map(message => {
-      return createNode('li', message, {
-        classNames: 'hrev',
-        href: '/messages.html',
-      })
+      return createNode(
+        'li',
+        null,
+        {
+          classNames: 'hrev',
+        },
+        [createNode('a', message, { href: '/messages.html' })],
+      )
     }),
   )
 }
