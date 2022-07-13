@@ -12,40 +12,40 @@
 //      link: '/friends.html',
 //    },
 //  ]
- 
+
 // //  attrs: { classNames: string, [otherAttrs]: unknown }
 //  export const createNode = (tagName, attrs, content, children) => {
 //    const elem = document.createElement(tagName)
- 
+
 //    if (attrs) {
 //      const { classNames, ...rest } = attrs
- 
+
 //      if (classNames) {
 //        elem.classList.add(classNames)
 //      }
- 
+
 //      Object.entries(rest).forEach(([key, value]) => {
 //        elem[key] = value
 //      })
 //    }
- 
+
 //    if (content) {
 //      elem.innterText = content
 //    }
- 
+
 //    if (children && children.length) {
 //      children.forEach(child => {
 //        elem.appendChild(child)
 //      })
 //    }
- 
+
 //    return elem
 //  }
- 
+
 //  const friendsLinks = friends.map(friend => {
 //    return createNode('a', { classNames: 'hrev', href: friend.link }, friend.name)
 //  })
- 
+
 //  const friensList = createNode(
 //    'li',
 //    { classNames: 'variants' },
@@ -55,26 +55,27 @@
 //  const ul = createNode('ul', null, null, friensList)
 //  const header = createNode('h3', null, 'Друзья')
 
+const root = document.getElementById('root')
+
 export function createFriends() {
-   const div = document.createElement('div')
-   console.log(div)
-   div.classList.add('container')
-   const body = document.body
-   body.appendChild(div)
-   const container = document.createElement('div')
-   container.classList.add('btn')
-   div.appendChild(container)
-   const header = document.createElement('h2')
-   header.textContent = 'Криворукие друзья'
-   div.appendChild(header);
-   container.innerHTML = `
+  root.innerHTML = ''
+  const div = document.createElement('div')
+  console.log(div)
+  div.classList.add('container')
+  const container = document.createElement('div')
+  container.classList.add('btn')
+  div.appendChild(container)
+  const header = document.createElement('h2')
+  header.textContent = 'Криворукие друзья'
+  div.appendChild(header)
+  container.innerHTML = `
    <a class="nav" href="javascript:history.go(-1)">Назад</a>
    <a class="nav" href="javascript:history.go(+1)">Вперед</a>
    `
-   const menu = document.createElement('div')
-   div.appendChild(menu)
-   menu.classList.add('men')
-   menu.innerHTML = `
+  const menu = document.createElement('div')
+  div.appendChild(menu)
+  menu.classList.add('men')
+  menu.innerHTML = `
    <div class="menu">
       <div class="template">
       <h3>Костя</h3>
@@ -143,4 +144,6 @@ export function createFriends() {
    </div>
 </div>
    `
+
+  root.appendChild(div)
 }
