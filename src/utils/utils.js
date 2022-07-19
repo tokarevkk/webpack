@@ -1,3 +1,4 @@
+
 export const createNode = (tagName, content, attrs, children) => {
   const elem = document.createElement(tagName)
 
@@ -12,13 +13,13 @@ export const createNode = (tagName, content, attrs, children) => {
       elem.setAttribute(key, value)
     })
   }
-
+//  console.log(elem)
   if (content) {
     elem.textContent = content
   }
 
   if (children && children.length) {
-    // console.log(elem, children)
+   //  console.log(elem, children)
     children.forEach(child => {
       elem.appendChild(child)
     })
