@@ -19,7 +19,6 @@ export const createNode = (tagName, content, attrs, children) => {
   }
 
   if (children && children.length) {
-   //  console.log(elem, children)
     children.forEach(child => {
       elem.appendChild(child)
     })
