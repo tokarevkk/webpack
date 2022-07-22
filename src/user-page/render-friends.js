@@ -1,6 +1,6 @@
-import friends from '../data/friends'
+import friends from '../data/friends.data'
 import { createNode } from '../utils/utils'
-import { createFriends } from '../friends'
+import { createFriends } from '../frends-page/friends'
 
 const navigateToFriends = () => {
   window.history.pushState(null, null, 'friends')

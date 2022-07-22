@@ -153,7 +153,6 @@ img {
 .nav{
    text-decoration: none;
    color: inherit;
-  
 }
 
 .btn {
@@ -165,3 +164,7 @@ img {
    font-size: 18px;
 }
 
+a{
+   text-decoration: none;
+   color: inherit;
+}

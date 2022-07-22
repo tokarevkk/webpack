@@ -1,3 +1,41 @@
+import { createNode } from '../utils/utils'
+import { renderUserContent } from './render-user'
+import { renderFriendsContent } from './render-friends'
+import { renderMessagesContent } from './render-messages'
+
+const root = document.getElementById('root')
+
+const renderNav = () => {
+  return [
+    createNode('a', 'Назад', {
+      classNames: 'nav',
+      href: 'javascript:history.go(-1)',
+    }),
+    createNode('a', 'Вперед', {
+      classNames: 'nav',
+      href: 'javascript:history.go(+1)',
+    }),
+  ]
+}
+
+const createContent = () => {
+  return createNode('div', null, { classNames: 'menu' }, [
+    renderUserContent(),
+    renderFriendsContent(),
+    renderMessagesContent(),
+  ])
+}
+
+export function createPage() {
+  root.innerHTML = ''
+  const header = createNode('h3', 'Криворукие сообщения')
+  const container = createNode('div', null, { classNames: 'btn' }, renderNav())
+  const content = createContent()
+  const div = createNode('div', null, null, [container, header, content])
+
+  root.appendChild(div)
+}
+
 export function createMessages() {
    const div = document.createElement('div')
    console.log(div)
@@ -16,7 +54,7 @@ export function createMessages() {
    `
    const menu = document.createElement('div')
    div.appendChild(menu)
-   menu.classList.add('men')
+   menu.classList.add('menu')
    menu.innerHTML = `
    <div class="menu">
       <div class="template">

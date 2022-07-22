@@ -26,14 +26,6 @@ module.exports = {
       filename: 'index.html',
       template: 'src/index.html',
     }),
-    new HtmlWebpackPlugin({
-      filename: 'friends.html',
-      template: 'src/friends.html',
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'messages.html',
-      template: 'src/messages.html',
-    }),
   ],
   output: {
     filename: '[name].js',
@@ -46,6 +38,7 @@ module.exports = {
         express.static(path.resolve(__dirname, 'img')),
       )
       return middlewares
-    },
-  },
+     },
+     historyApiFallback: true
+   },
 }
