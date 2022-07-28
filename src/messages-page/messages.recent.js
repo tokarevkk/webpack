@@ -1,8 +1,5 @@
 import { createNode } from "../utils/utils";
 
-
-
-
 export const renderMessage = (friend) => {
    const h3 = createNode('h3',
       new Date().toString())
