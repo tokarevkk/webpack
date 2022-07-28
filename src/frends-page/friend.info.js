@@ -11,7 +11,7 @@ export const renderGeneralInfo = (friend) => {
    return createNode('div', null, { classNames: 'template'},[h3, ul])
 } 
 
-const normalizeGeneralInfo = (friend) => {
+export const normalizeGeneralInfo = (friend) => {
    const { age, ocupation, phone } = friend
    return { age, ocupation, phone }
 }
