@@ -13,7 +13,7 @@ const renderMessages = () => {
         {
           classNames: 'hrev',
         },
-        [createNode('a', message, { href: '/messages.html' })],
+        [createNode('a', message, { href: '/messages' })],
       )
     }),
   )
